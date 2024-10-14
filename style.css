@@ -9,6 +9,7 @@
 
 .product {
     border: none;
+    border-radius: 5px;
     margin: 20px 40px;
 
 }
@@ -183,4 +184,12 @@ form {
     width: 70px;
     border-radius: 10px;
     border: solid 1px black;
+}
+
+a {
+    text-decoration: none;
+}
+
+#fix {
+    width: 0; height: 0;
 }
