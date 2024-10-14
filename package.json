@@ -1,0 +1,19 @@
+{
+  "name": "it391_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "database.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emconno/snow-cone-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emconno/snow-cone-website/issues"
+  },
+  "homepage": "https://github.com/emconno/snow-cone-website#readme"
+}
