@@ -10,7 +10,8 @@
 .product {
     border: none;
     border-radius: 5px;
-    margin: 20px 40px;
+    margin: 20px 10px;
+    width: 200px; height: 300px;
 
 }
 
@@ -147,7 +148,7 @@ form {
 .product-image {
     border: 2px, black, solid;
     border-radius: 5px;
-    height: 500px; width: 600px;
+    height: 500px; width: 80%;
     margin: 0 auto;
 }
 
@@ -165,7 +166,7 @@ form {
     border: 2px, black, solid;
     border-radius: 5px;
     */
-    height: 500px; width: 600px;
+    height: 500px; width: 80%;
     margin: 0 auto;
 }
 
