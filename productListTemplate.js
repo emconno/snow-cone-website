@@ -71,6 +71,13 @@ productContext.products = [
         sale_price: 7,
         category: 'ice macine'
     },
+    {
+        product_id: 7,
+        product_name: 'strawberry syrup',
+        sale_price: 7,
+        category: 'syrup'
+    },
+    
 
 ];
 console.log(productContext);
