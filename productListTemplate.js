@@ -77,6 +77,24 @@ productContext.products = [
         sale_price: 7,
         category: 'syrup'
     },
+    {
+        product_id: 6,
+        product_name: 'ice machine',
+        sale_price: 7,
+        category: 'ice macine'
+    },
+    {
+        product_id: 6,
+        product_name: 'ice machine',
+        sale_price: 7,
+        category: 'ice macine'
+    },
+    {
+        product_id: 6,
+        product_name: 'ice machine',
+        sale_price: 7,
+        category: 'ice macine'
+    },
     
 
 ];

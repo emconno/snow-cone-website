@@ -9,17 +9,22 @@
     <script id="product-temp" type="text/x-handlebars-template">
         {{#each products}}
             <button class="product">
-                <img class="product-img" src="images/snowcone-red.png">
+                <div class="pidiv">
+                    <img class="product-img" src="images/snowcone-red.png">
+                </div>
+                
                 <div class="product-description">
-                    <h2>{{this.product_name}}</h2>
+                    <h2 class="list-name">{{this.product_name}}</h2>
                     <p>description here</p>
                 </div>
             </button>
         {{/each}}
     </script>
-    <script src="database.js" type="module" defer></script>
+    <script type="text/javascript" src="package.json" defer></script>
+    <script src="database.js" defer></script>
     <script src="productListTemplate.js" defer></script>
     <script src="productButtons.js" defer></script>
+    <script src="searchFilter.js" defer></script>
 
 </head>
 
@@ -45,7 +50,7 @@
     </header>
 
     <main>
-        
+        <input type="text" id="search-filter" onkeyup="searchFilter()" placeholder="Search for a product by name">
         <div class="container">
             <div class="row">
                 <div class="col">
