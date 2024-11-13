@@ -1,22 +1,23 @@
 const mysql = require("mysql");
 
-const pool = mysql.createConnection({
+const connection = mysql.createConnection({
     host: 'localhost',
+    port: 3306,
     user: 'root',
     password: 'password',
     database:'it391',
     connectionLimit: 10
 });
 
-pool.connect(err => {
-    if(err) {
-        console.log(err);
+connection.connect(function(err) {
+    if (err) {
+        console.log("error occurred while connecting");
     } else {
-        console.log('Connected to database');
+        console.log("connection created with mysql successfully");
     }
 });
 
-pool.query('select * from products', (err, res) => {
+connection.query('select * from products', (err, res) => {
     if (err) {
         console.log(err);
     } else {
@@ -24,7 +25,7 @@ pool.query('select * from products', (err, res) => {
     } 
 });
 
-pool.query('select * from products where product_name = \'cherry syrup\'', (err, res) => {
+connection.query('select * from products where product_name = \'cherry syrup\'', (err, res) => {
     if (err) {
         console.log(err);
     } else {
