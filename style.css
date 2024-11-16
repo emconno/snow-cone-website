@@ -145,6 +145,7 @@ ul {
     border-radius: 5px;
     height: 50px;
     padding: 0 12px;
+    margin: 10px;
 }
 
 
@@ -177,7 +178,7 @@ img[src*='search_icon'] {
 }
 
 form {
-    margin: 10px;
+    margin: 15px;
     
 }
 
@@ -271,4 +272,35 @@ footer {
 .footer-link {
     color: white;
     margin: 5px;
+}
+
+.login-box {
+    height: 300px; width: 50%;
+    border: solid black 2px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 15%;
+    background-color: aliceblue;
+}
+
+#login {
+    text-align: center;
+    font-family: arial;
+}
+
+#login-table {
+    margin: 0 auto;
+    font-size: 24px;
+}
+
+.login-input {
+    height: 30px; width: 300px;
+    border-radius: 5px;   
+}
+
+#login-button {
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
 }
