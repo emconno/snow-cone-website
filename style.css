@@ -2,6 +2,14 @@
     text-align: center;
 }
 
+#logo {
+    height: 75px; width: 131px;
+}
+
+#header-logo {
+    margin: 0 15px;
+}
+
 .inline {
     display: inline-block;
     margin-left: 25%;
@@ -48,12 +56,7 @@
     text-align: left;
 }
 
-header {
-    background-color: dodgerblue;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-}
+
 
 .home-button {
     width: 100%;
@@ -174,7 +177,7 @@ img[src*='search_icon'] {
 }
 
 form {
-    margin: 5px;
+    margin: 10px;
     
 }
 
@@ -232,4 +235,40 @@ a {
 .list-name {
     height: 38.4px;
     overflow: hidden;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+
+header {
+    background-color: dodgerblue;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+  }
+
+footer {
+    min-height: 50px;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(27, 116, 205);
+    text-align: center;
+}
+
+.footer-link {
+    color: white;
+    margin: 5px;
 }
