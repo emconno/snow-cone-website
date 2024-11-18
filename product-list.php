@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -5,6 +6,25 @@
     <title>Snow Cone</title>
     <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script id="product-temp" type="text/x-handlebars-template">
+        {{#each products}}
+                <button class="product {{this.category}}">
+                    <div class="pidiv">
+                        <img class="product-img" src="{{this.image_url}}">
+                    </div>
+                    
+                    <div class="product-description">
+                        <h2 class="list-name">{{this.name}}</h2>
+                        <p>{{this.description}}</p>
+                    </div>
+                </button>
+        {{/each}}
+    </script>
+    <script src="productListTemplate.js" defer></script>
+    <script src="searchFilter.js" defer></script>
+
 </head>
 
 <body>
@@ -29,60 +49,14 @@
     </header>
 
     <main>
-
-        <div class="container-fluid">
+        <input type="text" id="search-filter" onkeyup="searchFilter()" placeholder="Search for a product by name">
+        <div class="container">
             <div class="row">
-                <div class="col-4">
-                    <a href="product-list.php">
-                        <button class="home-button" id="syrup">
-                            <div class="for-button">
-                                <div class="button-label">
-                                    <h2 class="home-button-title">Syrup</h2>
-                                </div>
-                            </div>
-                            
-                            
-                        </button>
-                    </a>
-                    <a href="product-list.php">
-                        <button class="home-button" id="cones">
-                            <div class="for-button">
-                                <div class="button-label">
-                                    <h2 class="home-button-title">Cones</h2>
-                                </div>
-                            </div>
-                        </button>
-                    </a>
-                    <a href="product-list.php">
-                        <button class="home-button" id="ice-machines">
-                            <div class="for-button">
-                                <div class="button-label">
-                                    <h2 class="home-button-title">Ice Machines</h2>
-                                </div>
-                            </div>
-                        </button>
-                    </a>
-                </div>
-
-                <div class="col-8">
-                    <a href="product-list.php">
-                        <button class="home-button" id="big-button">
-                            <div class="for-button">
-                                <div class="button-label">
-                                    <h2 class="home-button-title">All Products</h2>
-                                </div>
-                            </div>
-                            
-                        </button>
-                    </a>
+                <div class="col">
+                    <div id="product-list"></div>
                 </div>
             </div>
         </div>
-        <div class="about">
-
-        </div>
-
-
     </main>
 
     <footer>
