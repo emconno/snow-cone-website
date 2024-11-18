@@ -1,3 +1,4 @@
+
 .col {
     text-align: center;
 }
@@ -184,8 +185,10 @@ form {
 
 
 .product-image {
+    /*
     border: 2px, black, solid;
     border-radius: 5px;
+    */
     height: 500px; width: 80%;
     margin: 0 auto;
 }
@@ -234,7 +237,8 @@ a {
 }
 
 .list-name {
-    height: 38.4px;
+    height: 40px;
+    font-size: 28px;
     overflow: hidden;
 }
 
@@ -275,7 +279,7 @@ footer {
 }
 
 .login-box {
-    height: 300px; width: 50%;
+    height: 300px; width: 50%; min-width: 465px;
     border: solid black 2px;
     border-radius: 5px;
     margin: 0 auto;
@@ -303,4 +307,79 @@ footer {
     height: 40px;
     font-size: 20px;
     font-weight: bold;
+}
+
+
+.employee-header {
+    background-color: olive;
+    text-align: center;
+}
+
+#product-info-image {
+    height: 100%;
+    margin-left: 5%;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+.about {
+    height: 60px; 
+}
+
+.employee-func {
+    color: black;
+    width: 300px;
+    padding: 15px 0;
+    margin: 10px 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: 1px grey solid;
+}
+
+.functions {
+    text-align: center;
+}
+
+.current {
+    background-color: white;
+    font-weight: bold;
+    border: 2px black solid;
+
+}
+
+#login-display {
+    color: white;
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 20px;
+}
+
+.signup-form {
+    width: 450px;
+    font-size: 20px;
+    margin: 50px auto;
+}
+
+.signup-input {
+    width: 100%;
+    margin: 20px;
+}
+
+#signup-title {
+    font-size: 32px;
+    text-align: left;
+}
+
+#employee-submit {
+    border-radius: 25px;
+    padding: 5px 15px;
+    margin: 10px auto;
+}
+
+.signup-error {
+    color: red;
+}
+
+.signup-success {
+    color: green;
 }

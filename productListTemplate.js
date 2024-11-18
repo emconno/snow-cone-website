@@ -2,38 +2,51 @@ const productSource = document.getElementById('product-temp').innerHTML;
 
 const template = Handlebars.compile(productSource);
 
-const productContext = {};
 
 
+
+
+fetch('get-products.php')
+    .then(response => response.json()) // Parse JSON response
+    .then(data => {
+        console.log(data); // JavaScript object
+        // Use the data as needed
+        const productContext = { products: [] };
+        productContext.products = data;
+
+        const compiledProductHTML = template(productContext);
+
+        const list = document.getElementById('product-list');
+        list.innerHTML = compiledProductHTML;
+
+
+        let productButtons = document.getElementsByClassName("product");
+
+        console.log(productButtons);
+        
+        function openProductPage() {
+            
+            location.href="product-info.php";
+            console.log('testing button');
+        }
+
+        for (let i = 0; i < Object.keys(productButtons).length; i++) {
+            productButtons[i].addEventListener('click', (event) => {
+                const url = `product-info.php?pname=` + encodeURIComponent(productButtons[i].children[1].children[0].innerHTML);
+                window.location.href = url; // Navigate to the URL
+            });
+        }
+        /*
+        productButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const url = `product-info.php?pname=` + encodeURIComponent(button.children[1].children[0].innerHTML);
+                window.location.href = url; // Navigate to the URL
+            });
+        });
+        */
+    })
+    .catch(error => console.error('Error fetching data:', error));
 /*
-import { createConnection } from "mysql";
-
-const con = createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database:'it391',
-    connectionLimit: 10
-});
-
-con.connect(err => {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log('Connected to database');
-    }
-});
-
-con.query('select * from products', (err, res) => {
-    if (err) {
-        console.log(err);
-    } else {
-        productContext.products = res;
-        console.log(productContext);
-    } 
-});
-
-*/
 productContext.products = [
     {
         product_id: 1,
@@ -98,9 +111,6 @@ productContext.products = [
     
 
 ];
+*/
 console.log(productContext);
 
-const compiledProductHTML = template(productContext);
-
-const list = document.getElementById('product-list');
-list.innerHTML = compiledProductHTML;

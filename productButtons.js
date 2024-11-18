@@ -2,8 +2,10 @@ let productButtons = document.getElementsByClassName("product");
 
 console.log(productButtons);
 
+
+
 function openProductPage() {
-    location.href="product-info.html";
+    location.href="product-info.php";
     console.log('testing button');
 }
 
