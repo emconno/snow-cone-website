@@ -18,8 +18,10 @@ fetch('get-products.php')
                 break;
             }
         }
-        productContext.products = data;
-
+        //productContext.products = data;
+        let urlVar = productName.split(' ');
+        urlVar = urlVar.join('%20');
+        productContext.url = urlVar;
         const compiledProductHTML = template(productContext);
 
         const list = document.getElementById('product-info');

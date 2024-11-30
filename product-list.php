@@ -35,13 +35,14 @@
                     <a href="index.php" id="header-logo"><img src="images/logo2.png" id="logo"></a>
                 </div>
                 <div class="col-8">
-                    <form action="index.php" method="POST">
+                    <form action="product-list.php" method="POST">
                         <input id="search-bar" type="text" placeholder="Search for a product">
                     </form>
                 </div>
                 <div class="col-2">
                     <div class="inline">
                         <a href="login.php"><button class="account">Employee Log-in</button></a>
+                        <a href="cart.php"><button class="account" id="cart">Cart</button></a>
                     </div>
                 </div>
             </div>
