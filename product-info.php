@@ -1,4 +1,35 @@
+<?php
 
+session_start();
+
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $alreadyInCart = false;
+    $updateName;
+    $updateQ;
+    for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+        if ($_POST["pname"] == $_SESSION['cart'][$i]['name']){
+            $alreadyInCart = true;
+            $_SESSION['cart'][$i]['quantity'] += $_POST["product-quantity"];
+            break;
+        }
+    }
+    if (!$alreadyInCart) {
+        $cartItem = [
+            "name" => $_POST["pname"],
+            "quantity" => $_POST["product-quantity"]
+        ];
+        array_push($_SESSION['cart'], $cartItem);
+    }
+    
+    
+    
+}
+?>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -17,17 +48,18 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <form action="product-info.php" class="product-form" method="POST">
+                    <form action="product-info.php?pname={{this.url}}" class="product-form" method="POST">
                         <h1 class="product-form-item">{{this.name}}</h1>
                         <p class="product-form-item">{{this.description}}</p>
                         <h2 class="product-form-item">${{this.price}}</h2>
                         <div class="product-form-item">
                             <label for="product-quantity">Quantity:</label>
                             <br>
-                            <input type="number" min="1" max="{{this.quantity}}" id="product-quantity" value="1">
+                            <input type="number" min="1" max="{{this.quantity}}" name="product-quantity" id="product-quantity" value="1">
                             <p id="in-stock"><em>{{this.quantity}} left in stock</em></p>
                         </div>
-                        <input type="submit" value="Add to Cart" id="order-button">
+                        <input type="submit" value="Add to Cart" class="order-button" id="add-to-cart">
+                        <input type="text" name="pname" value="{{this.name}}" id="form-item-name" readonly>
                     </form>
                 </div>
             </div>
@@ -45,13 +77,14 @@
                     <a href="index.php" id="header-logo"><img src="images/logo2.png" id="logo"></a>
                 </div>
                 <div class="col-8">
-                    <form action="index.php" method="POST">
+                    <form action="product-list.php" method="POST">
                         <input id="search-bar" type="text" placeholder="Search for a product">
                     </form>
                 </div>
                 <div class="col-2">
                     <div class="inline">
                         <a href="login.php"><button class="account">Employee Log-in</button></a>
+                        <a href="cart.php"><button class="account" id="cart">Cart</button></a>
                     </div>
                 </div>
             </div>
@@ -59,6 +92,11 @@
     </header>
 
     <main>
+        <!--
+        <?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
+        		<p class="added-to-cart"><strong><em >Added item to cart</em></strong></p>
+    	<?php endif; ?>
+        -->
         <div id="product-info"></div>
     </main>
 
