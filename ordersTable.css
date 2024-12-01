@@ -1,0 +1,24 @@
+#orders {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.no-border {
+    border: none;
+}
+td {
+    border: solid 2px black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.order-details {
+    width: 300px;
+    
+}
+
+.order-items {
+    width: 300px;
+    background-color: lightgray;
+}
+

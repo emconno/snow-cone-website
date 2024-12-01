@@ -444,3 +444,22 @@ footer {
     color: red;
 
 }
+
+#post-order {
+    margin: 20px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+#continue-shopping {
+    width: 50%;
+}
+
+.cart-product-link {
+    color: black;
+}
+
+.cart-product-link:hover {
+    color: blue;
+}
+

@@ -15,12 +15,19 @@ fetch('get-products.php')
         inCart.forEach(element => {
             for (let i = 0; i < data.length; i++) {
                 if (data[i].name === element) {
+                    let urlVar = data[i].name.split(' ');
+                    urlVar = urlVar.join('%20');
+                    data[i].url = urlVar;
                     productContext.products.push(data[i]);
                     break;
                 }
             }
         });
 
+        console.log('test');
+        //console.log(productContext);
+
+        
         const compiledProductHTML = template(productContext);
 
         const list = document.getElementById('cart-temp-here');
