@@ -22,6 +22,7 @@ if (isset($_SESSION["user_id"])) {
     <title>Snow Cone</title>
     <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="ordersTable.css" rel="stylesheet">
 </head>
 
 <body>
@@ -62,7 +63,40 @@ if (isset($_SESSION["user_id"])) {
         </div>
 
         
-        
+        <table id="orders">
+            <tr>
+                <td>
+                    <p>Order ID</p>
+                </td>
+                <td>
+                    <p>Date</p>
+                </td>
+                <td>
+                    <p>E-mail</p>
+                </td>
+            </tr>
+            <!--start template-->
+            <tr>
+                <td class="order-details">
+                    <p>3</p>
+                </td>
+                <td class="order-details">
+                    <p>2024-11-30</p>
+                </td>
+                <td class="order-details">
+                    <p>emmettc4444@gmail.com</p>
+                </td>
+                <td class="no-border">
+                    <a href="employee-home.php"><strong>Mark as Complete</strong></a>
+                </td>
+            </tr>
+            <tr>
+                <td class="order-items" colspan="3">
+                    <p>Cherry Syrup: 3; Lime Syrup: 1;</p>
+                </td>
+            </tr>
+            <!--end template-->
+        </table>
         
         
 

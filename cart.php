@@ -27,11 +27,12 @@ if (!isset($_SESSION['cart'])) {
                     </div>
                     <div class="col-9">
                         <div class="cart-text">
-                            <h2>{{this.name}}</h2>
+                            <a class="cart-product-link" href="product-info.php?pname={{this.url}}"><h2>{{this.name}}</h2></a>
                             <label for="product-quantity">Quantity:</label>
                             <br>
                             <input value="{{this.orderQuantity}}" type="number" min="1" max="{{this.quantity}}" id="product-quantity">
                             <p><em>{{this.quantity}} in stock</em></p>
+                            <p>Price: <em><strong>${{this.price}}</strong> each</em></p>
                         </div>
                         
                     </div>
@@ -68,6 +69,9 @@ if (!isset($_SESSION['cart'])) {
                     for (let i = 0; i < data.length; i++) {
                         if (data[i].name === element.name) {
                             data[i].orderQuantity = element.quantity;
+                            let urlVar = data[i].name.split(' ');
+                            urlVar = urlVar.join('%20');
+                            data[i].url = urlVar;
                             productContext.products.push(data[i]);
                             break;
                         }
@@ -87,7 +91,7 @@ if (!isset($_SESSION['cart'])) {
                 const removes = document.getElementsByClassName('remove-cart-item');
                 function removeItem() {
                     for (let i = 0; i < cartItems.length; i++) {
-                        if (cartItems[i].name === this.parentNode.parentNode.children[2].children[0].children[0].innerHTML){
+                        if (cartItems[i].name === this.parentNode.parentNode.children[2].children[0].children[0].children[0].innerHTML){
                             
                             cartItems.splice(i, 1);
                             
@@ -154,7 +158,7 @@ if (!isset($_SESSION['cart'])) {
         <!--
             <div id="cart-temp-here"></div>
         -->
-        <form method="POST">
+        <form method="POST" action="send-email.php">
             <h1 class="product-form-item">Shopping Cart</h1>
             <?php if (count($_SESSION['cart']) > 0): ?>
             <div class="container product-form-item">
