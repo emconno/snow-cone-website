@@ -36,14 +36,14 @@ if (isset($_SESSION["user_id"])) {
 
                         <label class="" for="email"><em>E-mail: </em></label>
                         <input class="no-border" type="text" name="email" value="{{this.email}}" id="email" readonly>
-                        <input class="complete-order" type="submit" value="Mark as Complete">
+                        <input class="complete-order" type="submit" value="Complete" disabled>
 
                         
             </form>
             <div class="ois"><p>{{this.orderItems}}</p></div>
         {{/each}}
     </script>
-    <script src="ordersTemplate.js" defer></script>
+    <script src="completeOrdersTemp.js" defer></script>
 </head>
 
 <body>
@@ -79,13 +79,13 @@ if (isset($_SESSION["user_id"])) {
         -->
         <div class="functions">
             <a href="employee-home.php"><button class="employee-func current">Orders</button></a>
-            <!--<a href="add-products.php"><button class="employee-func">Add Products</button></a>-->
+            <!--<a href="add-products.php"><button class="employee-func">Add Products</button></a> -->
             <a href="add-employees.php"><button class="employee-func">Add Employees</button></a>
         </div>
 
         <div id="orders-temp-here"></div>
         <br>
-        <a class="view-more-orders" href="completed-orders.php">View Completed Orders</a>
+        <a class="view-more-orders" href="employee-home.php">Back to Active Orders</a>
 
     </main>
     

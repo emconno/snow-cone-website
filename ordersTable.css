@@ -17,8 +17,48 @@ td {
     
 }
 
-.order-items {
+.orderItems {
     width: 300px;
     background-color: lightgray;
 }
 
+#order-id {
+    border: none;
+    
+}
+
+.wide-box {
+    width: 100%;
+}
+
+.order {
+    border: solid black 1px;
+    margin: 2px 20%;
+    padding: 5px;
+
+}
+
+.complete-order {
+    margin-left: 20px;
+}
+
+.view-more-orders {
+    border: solid black 1px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 20%;
+    margin-top: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #ebebeb;
+
+    color: black;
+}
+
+.ois {
+    border: solid black 1px;
+    margin: 2px 20%;
+    padding: 5px;
+    background-color: lightgray;
+    margin-bottom: 20px;
+}

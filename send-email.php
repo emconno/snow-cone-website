@@ -41,7 +41,7 @@ $mail->send();
 //update database:
 $mysqli = require __DIR__ . "/database.php";
 
-$sql_order = "INSERT INTO orders (date, email) VALUES (CURDATE(), '" . $email . "')";
+$sql_order = "INSERT INTO orders (date, email, complete) VALUES (CURDATE(), '" . $email . "', '0')";
 $order_result = $mysqli->query($sql_order);
 
 $sql_orderID = "SELECT MAX(id) FROM orders WHERE email='" . $email . "'";

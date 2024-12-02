@@ -22,12 +22,15 @@
                 </button>
         {{/each}}
     </script>
+    
+    <script src="psfilt.js" defer></script>
     <script src="productListTemplate.js" defer></script>
     <script src="searchFilter.js" defer></script>
+    
 
 </head>
 
-<body>
+<body id="please">
     <header>
         <nav class="container-fluid">
             <div class="row">
@@ -50,7 +53,7 @@
     </header>
 
     <main>
-        <input type="text" id="search-filter" onkeyup="searchFilter()" placeholder="Search for a product by name">
+        <input type="text" id="search-filter" onload="searchFilter()" onkeyup="searchFilter()" placeholder="Search for a product by name" value="">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -68,3 +71,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
+<script>
+
+function searchFilter() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('search-filter');
+    filter = input.value.toUpperCase();
+    li = document.getElementsByClassName('list-name');
+  
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+    
+        txtValue = li[i].innerHTML;
+        console.log(txtValue);
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].parentNode.parentNode.style.display = "";
+        } else {
+          li[i].parentNode.parentNode.style.display = "none";
+        }
+    }
+}
+
+
+searchFilter();
+
+    searchFilter();
+</script>

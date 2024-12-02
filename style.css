@@ -326,6 +326,11 @@ footer {
 
 .about {
     height: 60px; 
+    text-align: center;
+}
+
+.center {
+    text-align: center;
 }
 
 .employee-func {

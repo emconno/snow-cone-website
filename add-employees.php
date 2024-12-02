@@ -110,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <main>
         <div class="functions">
             <a href="employee-home.php"><button class="employee-func">Orders</button></a>
-            <a href="add-products.php"><button class="employee-func">Add Products</button></a>
+            <!--<a href="add-products.php"><button class="employee-func">Add Products</button></a>-->
             <a href="add-employees.php"><button class="employee-func current">Add Employees</button></a>
         </div>
 
