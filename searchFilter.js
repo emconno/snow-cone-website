@@ -16,3 +16,6 @@ function searchFilter() {
         }
     }
 }
+
+
+searchFilter();

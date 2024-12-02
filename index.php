@@ -15,6 +15,7 @@ if (!isset($_SESSION['cart'])) {
     <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="cartInit.js" defer></script>
+    <script src="forButtons.js" defer></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@ if (!isset($_SESSION['cart'])) {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4">
-                    <a href="product-list.php">
+                    <a id="srup">
                         <button class="home-button" id="syrup">
                             <div class="for-button">
                                 <div class="button-label">
@@ -53,7 +54,7 @@ if (!isset($_SESSION['cart'])) {
                             
                         </button>
                     </a>
-                    <a href="product-list.php">
+                    <a id="cnes">
                         <button class="home-button" id="cones">
                             <div class="for-button">
                                 <div class="button-label">
@@ -62,7 +63,7 @@ if (!isset($_SESSION['cart'])) {
                             </div>
                         </button>
                     </a>
-                    <a href="product-list.php">
+                    <a id="machine" href="product-list.php">
                         <button class="home-button" id="ice-machines">
                             <div class="for-button">
                                 <div class="button-label">
@@ -88,7 +89,8 @@ if (!isset($_SESSION['cart'])) {
             </div>
         </div>
         <div class="about">
-
+            <h1 class="center">Welcome to Frosty's Cones!</h1>
+            <p><em>Click one of the buttons above to explore our catalog.</em></p>
         </div>
 
 
