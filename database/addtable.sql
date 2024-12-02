@@ -1,0 +1,1 @@
+ALTER TABLE `orders` ADD `complete` BOOLEAN NOT NULL AFTER `email`;
